@@ -1,0 +1,28 @@
+{
+  "name": "umt-markup-practice-osiichukyuliia",
+  "version": "1.0.0",
+  "description": "Flora — flower boutique landing page",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "preview:pages": "GITHUB_ACTIONS=true GITHUB_REPOSITORY=Yulia13777/UMT-markup-practice-OsiichukYuliia VITE_API_MODE=static sh -c 'vite build && vite preview'",
+    "build": "vite build",
+    "api": "json-server db.json --port 3001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Yulia13777/UMT-markup-practice-OsiichukYuliia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.16.0",
+    "json-server": "^1.0.0-beta.15",
+    "vite": "^8.0.12"
+  },
+  "devDependencies": {
+    "vite-plugin-static-copy": "^4.1.0"
+  }
+}

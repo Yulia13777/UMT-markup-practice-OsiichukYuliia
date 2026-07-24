@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Flora - Flower Bouquets</title>
+
+		<link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+
+		<!-- Normalize CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+			integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Preload hero bg for LCP -->
+		<link
+			rel="preload"
+			as="image"
+			href="./images/hero-bg@1x.jpg"
+			media="(-webkit-max-device-pixel-ratio: 1.99), (max-resolution: 191dpi)"
+			fetchpriority="high"
+		/>
+		<link
+			rel="preload"
+			as="image"
+			href="./images/hero-bg@2x.jpg"
+			media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+			fetchpriority="high"
+		/>
+
+		<!-- AOS — defer (non-critical animation lib) -->
+		<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="print" onload="this.media = 'all'" />
+
+		<!-- Animate.css — defer (non-critical) -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+			media="print"
+			onload="this.media = 'all'"
+		/>
+
+		<!-- Styles -->
+		<link rel="stylesheet" href="./styles/styles.css" />
+		<link rel="stylesheet" href="./styles/shared.css" />
+
+		<!-- Mobile menu -->
+		<script type="module" src="./js/mobile-menu.js"></script>
+
+		<!-- Modals -->
+		<script type="module" src="./js/modal.js"></script>
+
+		<!-- Strip lingering :hover/:focus state off CTAs after a click -->
+		<script type="module" src="./js/button-cooldown.js"></script>
+
+		<!-- Top-Selling Bouquets slider (API-backed) -->
+		<script type="module" src="./js/bestsellers-slider.js"></script>
+
+		<!-- Bouquets catalogue (API-backed, client-side pagination) -->
+		<script type="module" src="./js/catalogue.js"></script>
+
+		<!-- Testimonials slider (API-backed) -->
+		<script type="module" src="./js/feedback-slider.js"></script>
+	</head>
+	<body>
+		<!-- Navbar -->
+		<header class="header">
+			<div class="container header-container">
+				<div class="header-content">
+					<a class="header-logo-link" href="./index.html" aria-label="Flora — home">
+						<svg class="header-logo">
+							<use href="./icons/sprite.svg#flora-logo"></use>
+						</svg>
+					</a>
+				</div>
+				<nav class="header-nav">
+					<ul class="header-nav-list">
+						<li>
+							<a class="header-nav-link general-link" href="#about">About Us</a>
+						</li>
+						<li>
+							<a class="header-nav-link general-link" href="#bestsellers">Bestsellers</a>
+						</li>
+						<li>
+							<a class="header-nav-link general-link" href="#bouquets">Bouquets</a>
+						</li>
+						<li>
+							<a class="header-nav-link general-link" href="#feedback">Feedback</a>
+						</li>
+						<li>
+							<a class="header-nav-link general-link" href="#contacts">Contacts</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="header-actions">
+					<a class="primary-button header-button" href="#bouquets">Explore Bouquets</a>
+				</div>
+				<button
+					class="menu-button"
+					type="button"
+					aria-expanded="false"
+					aria-controls="mobile-menu"
+					aria-label="Toggle mobile menu"
+					data-menu-button
+				>
+					<svg class="menu-icon" aria-hidden="true">
+						<use href="./icons/sprite.svg#menu" class="menu-icon__burger"></use>
+						<use href="./icons/sprite.svg#close" class="menu-icon__close"></use>
+					</svg>
+				</button>
+			</div>
+		</header>
+
+		<main>
+			<!-- Hero Section -->
+			<section class="hero" id="hero">
+				<div class="container hero-container">
+					<div class="hero-content" data-aos="fade-right" data-aos-delay="150">
+						<h1 class="hero-title">Brighten Your Day with Our Stunning Bouquets</h1>
+						<div class="hero-body">
+							<p class="section-text">
+								At Flora, we believe that every occasion deserves a beautiful bouquet. Our expertly crafted arrangements
+								are designed to bring joy and elegance to your celebrations.
+							</p>
+
+							<a class="primary-button hero-button" href="#bestsellers">Explore Our Bestsellers</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- About Section -->
+			<section class="about" id="about">
+				<div class="container about-container">
+					<div class="about-content" data-aos="fade-right">
+						<svg class="about-icon">
+							<use href="./icons/sprite.svg#floral-icon"></use>
+						</svg>
+
+						<div class="about-text">
+							<h2 class="section-title">Our Passion for Floral Artistry</h2>
+							<p class="section-text">
+								At Flora, we believe that every bouquet tells a story. Our team meticulously crafts each arrangement,
+								blending creativity with the freshest blooms to create stunning pieces for every occasion.
+							</p>
+						</div>
+					</div>
+
+					<img
+						loading="lazy"
+						class="about-image"
+						src="./images/about-florist@1x.jpg"
+						srcset="./images/about-florist@2x.jpg 2x"
+						alt="Female florist arranging white peony flowers in a shop"
+						data-aos="fade-left"
+					/>
+				</div>
+			</section>
+
+			<!-- Top-Selling Bouquets -->
+			<section class="bestsellers" id="bestsellers" data-aos="fade-up-right">
+				<div class="container bestsellers-container">
+					<div class="bestsellers-title-row">
+						<h2 class="section-title">Top-Selling Bouquets</h2>
+					</div>
+
+					<div class="bestsellers-body" aria-busy="true">
+						<div
+							id="bestsellers-loader"
+							class="content-loader"
+							role="status"
+							aria-live="polite"
+							aria-label="Loading top bouquets"
+						>
+							<span class="content-loader__spinner" aria-hidden="true"></span>
+						</div>
+
+						<ul class="bestsellers-list" id="bestsellers-list" aria-live="polite"></ul>
+
+						<div class="bestsellers-controls">
+							<ul class="bestsellers-dots" id="bestsellers-dots"></ul>
+
+							<div class="bestsellers-nav">
+								<button class="slider-nav-button" type="button" data-bestsellers-prev aria-label="Previous bouquets">
+									<svg class="slider-nav-icon">
+										<use href="./icons/sprite.svg#arrow_back"></use>
+									</svg>
+								</button>
+								<button class="slider-nav-button" type="button" data-bestsellers-next aria-label="Next bouquets">
+									<svg class="slider-nav-icon">
+										<use href="./icons/sprite.svg#arrow_forward"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Bouquets Grid -->
+			<section class="bouquets" id="bouquets" data-aos="zoom-in">
+				<div class="container bouquets-container">
+					<div class="bouquets-title">
+						<h2 class="section-title">Bouquets</h2>
+						<p class="section-text">Explore our stunning selection of fresh flower bouquets.</p>
+					</div>
+
+					<div class="bouquets-list-shell" aria-busy="true">
+						<div
+							id="bouquets-loader"
+							class="content-loader"
+							role="status"
+							aria-live="polite"
+							aria-label="Loading bouquets"
+						>
+							<span class="content-loader__spinner" aria-hidden="true"></span>
+						</div>
+						<ul class="bouquets-list" id="bouquets-list" aria-live="polite"></ul>
+					</div>
+				</div>
+
+				<button class="primary-button bouquets-button bouquets-show-more-button" type="button">Show More</button>
+				<p class="bouquets-end-message" hidden>You've seen every bouquet — fresh batches arrive weekly.</p>
+			</section>
+
+			<!-- Testimonials -->
+			<section class="feedback" id="feedback" data-aos="fade-up">
+				<div class="container feedback-container">
+					<h2 class="section-title feedback-title">What our clients says</h2>
+
+					<div
+						id="feedback-loader"
+						class="content-loader"
+						role="status"
+						aria-live="polite"
+						aria-label="Loading testimonials"
+					>
+						<span class="content-loader__spinner" aria-hidden="true"></span>
+					</div>
+
+					<ul class="feedback-list" id="feedback-list" aria-live="polite"></ul>
+
+					<div class="feedback-nav">
+						<button class="slider-nav-button" type="button" data-feedback-prev aria-label="Previous testimonials">
+							<svg class="slider-nav-icon">
+								<use href="./icons/sprite.svg#arrow_back"></use>
+							</svg>
+						</button>
+						<button class="slider-nav-button" type="button" data-feedback-next aria-label="Next testimonials">
+							<svg class="slider-nav-icon">
+								<use href="./icons/sprite.svg#arrow_forward"></use>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</section>
+
+			<!-- Contact -->
+			<section class="contacts" id="contacts" data-aos="fade-up">
+				<div class="container contacts-container">
+					<div class="contacts-header">
+						<div class="contacts-intro">
+							<p class="contacts-tagline">Connect</p>
+							<div class="contacts-heading">
+								<h2 class="section-title">Get in Touch</h2>
+								<p class="section-text">We're here to assist you with all your floral needs and inquiries.</p>
+							</div>
+						</div>
+
+						<div class="contacts-info">
+							<div class="contacts-info-item">
+								<svg class="contacts-info-icon">
+									<use href="./icons/sprite.svg#phone"></use>
+								</svg>
+								<div class="contacts-info-text">
+									<h3 class="contacts-info-title">Phone</h3>
+									<a class="contacts-info-link general-link" href="tel:+15551234567">+1 (555) 123-4567</a>
+								</div>
+							</div>
+
+							<div class="contacts-info-item">
+								<svg class="contacts-info-icon">
+									<use href="./icons/sprite.svg#map"></use>
+								</svg>
+								<div class="contacts-info-text">
+									<h3 class="contacts-info-title">Store</h3>
+									<address>
+										<a
+											class="contacts-info-address general-link"
+											href="https://www.google.com/maps/search/?api=1&amp;query=456+Floral+Ave+Sydney+NSW+2000+AU"
+											target="_blank"
+											rel="noopener noreferrer"
+											>456 Floral Ave, Sydney NSW 2000 AU</a
+										>
+									</address>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<img
+						loading="lazy"
+						class="contacts-image"
+						src="./images/contact-florist@1x.jpg"
+						srcset="./images/contact-florist@2x.jpg 2x"
+						alt="Florist holding beautiful flowers in a flower shop"
+					/>
+				</div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer class="footer">
+			<div class="container footer-container">
+				<div class="footer-content">
+					<a class="footer-logo-link" href="./index.html" aria-label="Flora — home">
+						<svg class="footer-logo">
+							<use href="./icons/sprite.svg#flora-logo"></use>
+						</svg>
+					</a>
+
+					<nav class="footer-nav">
+						<ul class="footer-nav-list">
+							<li>
+								<a class="footer-nav-link general-link" href="#about">About Us</a>
+							</li>
+							<li>
+								<a class="footer-nav-link general-link" href="#bestsellers">Bestsellers</a>
+							</li>
+							<li>
+								<a class="footer-nav-link general-link" href="#bouquets">Bouquets</a>
+							</li>
+							<li>
+								<a class="footer-nav-link general-link" href="#feedback">Feedback</a>
+							</li>
+							<li>
+								<a class="footer-nav-link general-link" href="#contacts">Contacts</a>
+							</li>
+						</ul>
+					</nav>
+
+					<ul class="footer-social">
+						<li class="footer-social-item">
+							<a
+								class="footer-social-link"
+								href="https://facebook.com"
+								target="_blank"
+								rel="noopener"
+								aria-label="Facebook"
+							>
+								<svg class="footer-social-icon">
+									<use href="./icons/sprite.svg#facebook"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer-social-item">
+							<a
+								class="footer-social-link"
+								href="https://instagram.com"
+								target="_blank"
+								rel="noopener"
+								aria-label="Instagram"
+							>
+								<svg class="footer-social-icon">
+									<use href="./icons/sprite.svg#instagram"></use>
+								</svg>
+							</a>
+						</li>
+						<li class="footer-social-item">
+							<a
+								class="footer-social-link"
+								href="https://x.com"
+								target="_blank"
+								rel="noopener"
+								aria-label="X (Twitter)"
+							>
+								<svg class="footer-social-icon">
+									<use href="./icons/sprite.svg#twitter"></use>
+								</svg>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="footer-credits">
+					<hr class="footer-divider" />
+					<p class="footer-copyright">&copy; 2025 Flora. All rights reserved.</p>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Mobile menu -->
+		<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile menu" data-menu>
+			<nav class="menu-navigation">
+				<ul class="menu-navigation-list">
+					<li>
+						<a class="menu-navigation-link general-link" href="#about">About Us</a>
+					</li>
+					<li>
+						<a class="menu-navigation-link general-link" href="#bestsellers">Bestsellers</a>
+					</li>
+					<li>
+						<a class="menu-navigation-link general-link" href="#bouquets">Bouquets</a>
+					</li>
+					<li>
+						<a class="menu-navigation-link general-link" href="#feedback">Feedback</a>
+					</li>
+					<li>
+						<a class="menu-navigation-link general-link" href="#contacts">Contacts</a>
+					</li>
+				</ul>
+			</nav>
+			<a class="primary-button menu-action-button" href="#bouquets">Explore Bouquets</a>
+		</div>
+
+		<!-- Product Details Modal -->
+		<div
+			class="modal-backdrop product-modal"
+			id="product-modal"
+			role="dialog"
+			aria-modal="true"
+			aria-labelledby="product-modal-title"
+			aria-describedby="product-modal-text"
+			data-modal
+			hidden
+		>
+			<div class="modal-window" role="document">
+				<button
+					type="button"
+					class="modal-close"
+					aria-label="Close product details"
+					data-modal-close
+				>
+					<svg class="modal-close-icon" aria-hidden="true">
+						<use href="./icons/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<div class="product-modal-content" id="product-modal-content">
+					<img
+						class="product-modal-image"
+						id="product-modal-image"
+						src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+						alt=""
+					/>
+
+					<div class="product-modal-info">
+						<h2 class="product-modal-title" id="product-modal-title">Bouquet</h2>
+						<div class="product-modal-price-row">
+							<p class="product-modal-price" id="product-modal-price">$0</p>
+							<span class="product-modal-price-divider" aria-hidden="true"></span>
+						</div>
+						<p class="product-modal-text" id="product-modal-text">
+							Each stem is carefully selected to create a bouquet that radiates freshness, elegance, and the
+							gentle charm of spring. Whether you're celebrating a birthday, sending love, or simply
+							brightening someone's day, this arrangement is sure to bring warm smiles and lasting
+							impressions.
+						</p>
+
+						<div class="product-modal-actions">
+							<button
+								type="button"
+								class="primary-button product-modal-buy"
+								data-open-modal="order-modal"
+							>
+								Buy now
+							</button>
+							<input
+								type="number"
+								class="product-modal-quantity"
+								id="product-modal-quantity"
+								name="quantity"
+								min="1"
+								placeholder="1"
+								aria-label="Quantity"
+								aria-describedby="product-modal-quantity-error"
+							/>
+							<span
+								class="modal-field-error product-modal-quantity-error"
+								id="product-modal-quantity-error"
+								hidden
+							>Error text</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Order Modal -->
+		<div
+			class="modal-backdrop order-modal"
+			id="order-modal"
+			role="dialog"
+			aria-modal="true"
+			aria-labelledby="order-modal-title"
+			data-modal
+			hidden
+		>
+			<div class="modal-window" role="document">
+				<button type="button" class="modal-close" aria-label="Close order form" data-modal-close>
+					<svg class="modal-close-icon" aria-hidden="true">
+						<use href="./icons/sprite.svg#close"></use>
+					</svg>
+				</button>
+
+				<h2 class="order-modal-title" id="order-modal-title">Order</h2>
+
+				<form class="modal-form" id="order-form" novalidate>
+					<div class="modal-field">
+						<label class="modal-field-label" for="order-name">Name*</label>
+						<input
+							class="modal-field-input"
+							type="text"
+							id="order-name"
+							name="name"
+							placeholder="Ann"
+							aria-describedby="order-name-error"
+							required
+						/>
+						<span class="modal-field-error" id="order-name-error" hidden>Error text</span>
+					</div>
+
+					<div class="modal-field">
+						<label class="modal-field-label" for="order-phone">Phone*</label>
+						<input
+							class="modal-field-input"
+							type="tel"
+							id="order-phone"
+							name="phone"
+							placeholder="+1 (555) 123-4567"
+							aria-describedby="order-phone-error"
+							required
+						/>
+						<span class="modal-field-error" id="order-phone-error" hidden>Error text</span>
+					</div>
+
+					<div class="modal-field">
+						<label class="modal-field-label" for="order-address">Adress</label>
+						<input
+							class="modal-field-input"
+							type="text"
+							id="order-address"
+							name="address"
+							placeholder="456 Floral Ave, Sydney NSW 2000 AU"
+							aria-describedby="order-address-error"
+						/>
+						<span class="modal-field-error" id="order-address-error" hidden>Error text</span>
+					</div>
+
+					<div class="modal-field">
+						<label class="modal-field-label" for="order-message">Message</label>
+						<textarea
+							class="modal-field-textarea"
+							id="order-message"
+							name="message"
+							placeholder="Type your message..."
+							rows="5"
+							aria-describedby="order-message-error"
+						></textarea>
+						<span class="modal-field-error" id="order-message-error" hidden>Error text</span>
+					</div>
+
+					<button type="submit" class="primary-button order-modal-submit">Go to Checkout</button>
+				</form>
+			</div>
+		</div>
+
+		<!-- AOS init -->
+		<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+		<script>
+			AOS.init({
+				duration: 800,
+				easing: "ease-out",
+				once: true,
+				offset: 100,
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+:root {
+	/* Mobile (base) — actual values used */
+	--font-small: 12px;
+	--font-regular: 14px;
+	--font-medium: 16px;
+	--font-price: 18px;
+	--font-heading: 32px;
+	--font-hero-title: 36px;
+
+	/* Fixed across breakpoints (used by button, burger nav links) */
+	--font-button: 16px;
+	--font-menu-link: 16px;
+	--font-heading-section: 34px;
+	--font-subtitle: 18px;
+	--font-author: 16px;
+
+	/* Reference (tablet/desktop overrides are in styles.css @media) */
+	--font-heading-mobile: 32px;
+	--font-small-tablet: 14px;
+	--font-regular-tablet: 16px;
+	--font-medium-tablet: 18px;
+	--font-price-tablet: 20px;
+	--font-heading-tablet: 40px;
+	--font-hero-title-tablet: 48px;
+
+	--font-small-desktop: 14px;
+	--font-regular-desktop: 16px;
+	--font-medium-desktop: 18px;
+	--font-price-desktop: 20px;
+	--font-heading-desktop: 48px;
+	--font-hero-title-desktop: 56px;
+
+	/* Modals — fixed across breakpoints (Figma design tokens) */
+	--font-modal-heading: 32px; /* Hanuman 400 / line-height 38.4 / ls -0.01em — Heading on Product Details */
+	--font-modal-price: 20px; /* Hanuman 400 / line-height 28 / ls -0.01em — Price text */
+	--font-modal-text: 14px; /* Roboto 400 / line-height 21 — description text */
+	--font-modal-input: 16px; /* Roboto 400 / line-height 24 — "Text Sizes / Text Regular" — inputs and quantity */
+	--font-modal-label: 16px; /* Roboto 400 / line-height 24 — input labels */
+	--font-modal-title: 34px; /* Hanuman 400 — Order modal title (matches --font-heading-section) */
+	--font-modal-title-line-height: 41px; /* Figma frame bbox = 41 (rounded up from 34×1.2 = 40.8) */
+}
